@@ -5,7 +5,7 @@ import { trpc } from "../utils/trpc";
 
 const styles = {
   width: "100vw",
-  height: "100vh"
+  height: "100vh",
 };
 
 export default function IndexPage() {

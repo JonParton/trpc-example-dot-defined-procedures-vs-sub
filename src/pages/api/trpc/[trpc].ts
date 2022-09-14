@@ -12,19 +12,17 @@ const appRouter = t.router({
   foo: t.router({
     "bar.qux": t.procedure.query(() => {
       return {
-        log:
-          "the`foo`.`bar.qux` procedure responded (IE the one with a . in the property name)"
+        log: "the`foo`.`bar.qux` procedure responded (IE the one with a . in the property name)",
       };
     }),
     bar: t.router({
       qux: t.procedure.query(() => {
         return {
-          log:
-            "the`foo`.`bar`.`qux` procedure responded (IE the one defined as sub routers)"
+          log: "the`foo`.`bar`.`qux` procedure responded (IE the one defined as sub routers)",
         };
-      })
-    })
-  })
+      }),
+    }),
+  }),
 });
 
 // export only the type definition of the API
@@ -34,5 +32,5 @@ export type AppRouter = typeof appRouter;
 // export API handler
 export default trpcNext.createNextApiHandler({
   router: appRouter,
-  createContext: () => ({})
+  createContext: () => ({}),
 });
